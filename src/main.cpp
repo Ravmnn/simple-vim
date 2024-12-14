@@ -1,15 +1,16 @@
-#include <iostream>
-
-#include <ansi.hpp>
+#include <ncurses.h>
 
 
 
 int main()
 {
-	std::cout << saveCursorPosition();
+	initscr();
+	noecho();
 
-	for (size_t i = 0; i < 99999999; i++)
-		std::cout << i << loadCursorPosition();
+	while (true)
+		getch();
+
+	endwin();
 
 	return 0;
 }
